@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="lib" path="/Users/wangfeng/Documents/workspace/jar包/now/ejson-compile-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/wangfeng/Documents/workspace/jar包/now/esql-3.2.0.jar"/>
+	<classpathentry kind="lib" path="/Users/wangfeng/Documents/workspace/jar包/now/mina-core-2.0.4.jar"/>
+	<classpathentry kind="lib" path="/Users/wangfeng/Documents/workspace/jar包/now/org.apache.log4j_1.2.13.jar"/>
+	<classpathentry kind="lib" path="/Users/wangfeng/Documents/workspace/jar包/now/postgresql-9.1-901.jdbc3.jar"/>
+	<classpathentry kind="lib" path="/Users/wangfeng/Documents/workspace/jar包/now/protobuf-java-2.5.0.jar"/>
+	<classpathentry kind="lib" path="/Users/wangfeng/Documents/workspace/jar包/now/slf4j-api-1.6.4.jar"/>
+	<classpathentry kind="lib" path="/Users/wangfeng/Documents/workspace/jar包/now/slf4j-log4j12-1.6.4.jar"/>
+	<classpathentry kind="lib" path="/Users/wangfeng/Documents/workspace/jar包/now/ezmorph-1.0.2.jar"/>
+	<classpathentry kind="lib" path="/Users/wangfeng/Documents/workspace/jar包/now/json-lib-2.4-jdk15.jar"/>
+	<classpathentry kind="lib" path="/Users/wangfeng/Documents/workspace/jar包/now/commons-beanutils-1.7.0.jar"/>
+	<classpathentry kind="lib" path="/Users/wangfeng/Documents/workspace/jar包/now/commons-collections-3.2.jar"/>
+	<classpathentry kind="lib" path="/Users/wangfeng/Documents/workspace/jar包/now/commons-lang-2.1.jar"/>
+	<classpathentry kind="lib" path="/Users/wangfeng/Documents/workspace/jar包/now/commons-logging-1.1.3.jar"/>
+	<classpathentry kind="lib" path="/Users/wangfeng/Documents/workspace/jar包/now/ejson-runtime-1.0.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
