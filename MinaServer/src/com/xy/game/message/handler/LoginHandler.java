@@ -45,17 +45,22 @@ public class LoginHandler extends AbstractHandler{
 	public void getRoleInfo(){
 		//JSONObject sendJson = new JSONObject();
 		try {
-		MyMessage<User> m = new MyMessage<User>();
-		m.setOk(true);
-		m.setType(1);
 		
 		JSONObject sendJson = message.getJSONObject("data");
+		int megType = message.getInt("msgType");
 		String login = sendJson.getString("login");
 		String psw = sendJson.getString("psw");
 		TestDAO tDao = new TestDAO();
 		User u =  tDao.getUser(login, psw);//userDao.getUser(login, psw);
 
-		m.setData(u);
+		MyMessage<User> m = new MyMessage<User>();
+		m.setMsgType(megType);
+		if (u != null){	
+			m.setOk(true);
+			m.setData(u);
+		}else{
+			m.setOk(false);
+		}
 		String s = JSON.string(m);
 			//sendJson = JSONObject.fromObject(u);
 		session.write(s);

@@ -53,7 +53,7 @@ public class RoleHandler extends AbstractHandler{
 		User user = userDao.getUser(login, psw);
 		MyMessage<User> m = new MyMessage<User>();
 		m.setOk(true);
-		m.setType(1);
+		m.setMsgType(1);
 		m.setData(user);
 		String s = JSON.string(m);
 			//sendJson = JSONObject.fromObject(u);

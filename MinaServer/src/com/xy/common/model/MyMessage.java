@@ -8,7 +8,7 @@ public class MyMessage<T> extends Bean {
  
 	private static final long serialVersionUID = 1L;
 	private boolean ok;    // 是否请求成功
-	private int type;		   // 请求标记
+	private int msgType;		   // 请求标记
 	private T data;	   // 返回数据
 	
 
@@ -20,18 +20,19 @@ public class MyMessage<T> extends Bean {
 		this.ok = ok;
 	}
 
-	public int getType() {
-		return type;
-	}
-	
-	public void setType(int type) {
-		this.type = type;
-	}
-	
+
 	public T getData() {
 		return data;
 	}
 	public void setData(T data) {
 		this.data = data;
+	}
+
+	public int getMsgType() {
+		return msgType;
+	}
+
+	public void setMsgType(int msgType) {
+		this.msgType = msgType;
 	}	
 }

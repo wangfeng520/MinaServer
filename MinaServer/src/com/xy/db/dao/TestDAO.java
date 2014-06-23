@@ -25,9 +25,10 @@ public class TestDAO {
 			String sql = "select * from t_user where login = ? and psw = ?";
 			PreparedStatement preStat = conn.prepareStatement(sql);
 			Tools.setPreStatementItems(preStat,login, psw);
-			User u = new User();
+			User u = null;
 			ResultSet rs = preStat.executeQuery();
 			while (rs.next()) {
+				u = new User();
 				u.setId(rs.getLong("id"));
 				u.setLogin(rs.getString("login"));
 				u.setQq(rs.getString("qq"));
