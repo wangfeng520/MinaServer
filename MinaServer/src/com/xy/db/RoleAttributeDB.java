@@ -8,7 +8,7 @@ import com.xy.db.dao.RoleDAO;
 
 public class RoleAttributeDB {
 	
-	/**角色属性*/
+	/**角色属性 */
 	public static HashMap<Integer, RoleAttribute> roleAttr = new HashMap<Integer, RoleAttribute> ();
 	
 	/**将角色相应等级属性数据加载到内存中*/
