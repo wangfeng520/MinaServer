@@ -48,13 +48,14 @@ public class LoginHandler extends AbstractHandler{
 		MyMessage<User> m = new MyMessage<User>();
 		m.setOk(true);
 		m.setType(1);
+//		
+//		JSONObject sendJson = message.getJSONObject("data");
+//		String login = sendJson.getString("login");
+//		String psw = sendJson.getString("psw");
+//		TestDAO tDao = new TestDAO();
+		//User u =  tDao.getUser(login, psw);//
+		User u = userDao.getUser("wf", "123");
 		
-		JSONObject sendJson = message.getJSONObject("data");
-		String login = sendJson.getString("login");
-		String psw = sendJson.getString("psw");
-		TestDAO tDao = new TestDAO();
-		User u =  tDao.getUser(login, psw);//userDao.getUser(login, psw);
-
 		m.setData(u);
 		String s = JSON.string(m);
 			//sendJson = JSONObject.fromObject(u);
