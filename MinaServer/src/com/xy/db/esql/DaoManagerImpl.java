@@ -15,7 +15,6 @@ import zuojie.esql.build.EsqlBuilder;
 
 import com.xy.common.JavaPackageExplorer;
 import com.xy.db.esql.Dao.DB;
-import com.xy.db.jdbc.ConnectionPoolManager;
 
 public class DaoManagerImpl implements DaoManager {
 	public static final String DATABASE_KEY = "database";
