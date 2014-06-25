@@ -64,6 +64,8 @@ public class LoginHandler extends AbstractHandler {
 
 			if (u == null){
 				m.setOk(false);
+			}else{
+				m.setOk(true);
 			}
 			m.setData(u);
 			String s = JSON.string(m);
