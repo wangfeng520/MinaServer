@@ -10,7 +10,6 @@ import zizi.ejson.JSON;
 import com.xy.common.model.MyMessage;
 import com.xy.common.model.User;
 import com.xy.common.struct.constants.MessageType;
-import com.xy.db.dao.TestDAO;
 import com.xy.db.dao.UserDao;
 import com.xy.db.esql.DaoManager;
 import com.xy.game.manager.Managers;
@@ -59,12 +58,13 @@ public class LoginHandler extends AbstractHandler{
 		m.setData(u);
 		String s = JSON.string(m);
 			//sendJson = JSONObject.fromObject(u);
-		session.write(s);
+	//	session.write(s);
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 		
 		return;
 	}

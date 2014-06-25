@@ -55,6 +55,8 @@ public class MessageManager {
 		Class<?> transmission = Class.forName(properties.getStringFromProperty(message.getInt("msgType") + ""));
 		Constructor<?> test = transmission.getConstructor(IoSession.class, JSONObject.class);
 		AbstractHandler handler = (AbstractHandler) test.newInstance(session, message);
+		
+		
 		handler.handle();
 	}
 }

@@ -34,7 +34,7 @@ public class DataSourceSelector {
 		// 读取master
 		EsqlConfig config = new EsqlConfig();
 		config.setDatabase("POSTGRESQL");
-		config.setName("");
+		config.setName("lvshuiqiao");
 		config.setPassword("123");
 		config.setPort(5432);
 		config.setUser("wangfeng");
