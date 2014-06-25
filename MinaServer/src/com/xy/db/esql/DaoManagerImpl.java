@@ -1,7 +1,6 @@
 package com.xy.db.esql;
 
 import java.lang.reflect.Modifier;
-import java.sql.Connection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -13,7 +12,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import zuojie.esql.Esql;
-import zuojie.esql.build.EsqlBuilder;
 
 import com.xy.common.JavaPackageExplorer;
 import com.xy.db.esql.Dao.DB;
@@ -52,7 +50,6 @@ public class DaoManagerImpl implements DaoManager {
 		
 		if (dao == null) throw new RuntimeException("指定的DAO不存在: " + type.getCanonicalName());
 		try {
-			//esql.begin(Connection.TRANSACTION_READ_COMMITTED, null);
 			 begin();
 			((BaseDao) dao).setEsql(esql);
 		} catch (Exception e) {
