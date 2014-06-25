@@ -9,7 +9,7 @@ import zizi.ejson.JSON;
 import zuojie.esql.Esql;
 
 import com.xy.common.model.MyMessage;
-import com.xy.common.model.User;
+import com.xy.common.model.user.User;
 import com.xy.common.struct.constants.MessageType;
 import com.xy.db.dao.UserDao;
 import com.xy.db.esql.DaoManager;
@@ -57,7 +57,7 @@ public class RoleHandler extends AbstractHandler{
 		//JSONObject sendJson = new JSONObject();
 		String login = message.getString("login");
 		String psw = message.getString("psw");
-		User user = userDao.getUser(login, psw);
+		User user = userDao.getUserByLogin(login, psw);
 		MyMessage<User> m = new MyMessage<User>();
 		m.setOk(true);
 		m.setMsgType(1);

@@ -32,14 +32,8 @@ public class DataSourceSelector {
 		this.database = database;
 
 		// 读取master
-		EsqlConfig config = new EsqlConfig();
-		config.setDatabase("POSTGRESQL");
-		config.setName("lvshuiqiao");
-		config.setPassword("123");
-		config.setPort(5432);
-		config.setUser("wangfeng");
-		config.setServer("localhost");
-		
+		EsqlConfig config = readConfig();
+	
 		master = DataSourceBuilder.build(config);
 
 	}
@@ -52,13 +46,13 @@ public class DataSourceSelector {
 		return n == null ? this.master : slaves.get(n);
 	}
 
-	private EsqlConfig readConfig( Integer n) throws Exception {
+	private EsqlConfig readConfig() throws Exception {
 		EsqlConfig config = new EsqlConfig();
 
 		String server = "localhost";
 		Integer port = 5432;
 		String name = "lvshuiqiao";
-		String user = "root";
+		String user = "wangfeng";
 		String password = "123";
 		Integer max = 300;
 

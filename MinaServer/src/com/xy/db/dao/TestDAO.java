@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import net.sf.json.JSONObject;
 
 import com.xy.common.Tools;
-import com.xy.common.model.User;
+import com.xy.common.model.user.User;
 import com.xy.db.jdbc.ConnectionPoolManager;
 
 /**

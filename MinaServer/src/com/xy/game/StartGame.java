@@ -47,7 +47,7 @@ public class StartGame {
 		network.startNetwork();
 
 		// System.out.println(test("ÄãºÃ", "ÄãºÃ"));
-		test1();
+		// test1();
 	}
 
 	

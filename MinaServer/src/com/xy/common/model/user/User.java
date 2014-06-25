@@ -1,4 +1,4 @@
-package com.xy.common.model;
+package com.xy.common.model.user;
 
 import com.xy.common.struct.IdBean;
 
