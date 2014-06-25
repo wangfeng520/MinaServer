@@ -48,23 +48,23 @@ public class LoginHandler extends AbstractHandler {
 	 * 获取角色全部信息
 	 */
 	public void getRoleInfo() {
-		//JSONObject sendJson = new JSONObject();
-				try {
-					MyMessage<User> m = new MyMessage<User>();
-					m.setOk(true);
-					m.setMsgType(1);
-					User u = userDao.getUser("wf", "123");
 
-					m.setData(u);
-					String s = JSON.string(m);
+		try {
+			MyMessage<User> m = new MyMessage<User>();
+			m.setOk(true);
+			m.setMsgType(1);
+			User u = userDao.getUser("wf", "123");
 
-					session.write(s);
+			m.setData(u);
+			String s = JSON.string(m);
 
-				} catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+			session.write(s);
 
-				return;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return;
 	}
 }
