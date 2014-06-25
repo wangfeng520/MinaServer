@@ -4,6 +4,8 @@ import net.sf.json.JSONObject;
 
 import org.apache.mina.core.session.IoSession;
 
+import zuojie.esql.Esql;
+
 /**
  * 包含会话和消息及处理函数申明的抽象消息处理器
  */
@@ -22,4 +24,6 @@ public abstract class AbstractHandler {
 	}
 	
 	public abstract void handle();
+	
+	public abstract void initDaoEsql(Esql e);
 }

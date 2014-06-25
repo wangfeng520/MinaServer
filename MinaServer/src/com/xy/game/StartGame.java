@@ -7,6 +7,9 @@ import java.sql.SQLException;
 
 import org.apache.log4j.Logger;
 
+import zuojie.esql.Esql;
+import zuojie.esql.build.EsqlBuilder;
+
 import com.xy.common.Tools;
 import com.xy.db.esql.DaoManagerImpl;
 import com.xy.db.jdbc.ConnectionPoolManager;
@@ -49,8 +52,22 @@ public class StartGame {
 
 	
 	public static void test1(){
-		LoginHandler l = new LoginHandler();
-		l.getRoleInfo();
+		LoginHandler handler = new LoginHandler();
+		try {
+			Esql esql = EsqlBuilder.build(Esql.POSTGRESQL);
+			try {
+				handler.initDaoEsql(esql);
+				handler.getRoleInfo();
+				esql.commit();
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				esql.end();
+			}
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 	}
 	public static int test(String playerName, String password) {
 		try {

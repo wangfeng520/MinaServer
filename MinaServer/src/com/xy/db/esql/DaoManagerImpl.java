@@ -36,32 +36,28 @@ public class DaoManagerImpl implements DaoManager {
 		database = Esql.POSTGRESQL;
 
 		selector = new DataSourceSelector(database);
-
-		setup();
 		load();
 	}
 
 	public void destroy() {
 	}
 
-	private void setup() throws Exception {
-		// 创建esql对象
-		Esql e = EsqlBuilder.build(database);
+	public void setEsql(Esql e){
 		esql = e;
 	}
-
-	public <T> T getDao(Class<T> type) {
+	
+	public <T> T getDao(Class<T> type, Esql esql) {
 		Object dao = daos.get(type);
+		this.esql = esql;
+		
 		if (dao == null) throw new RuntimeException("指定的DAO不存在: " + type.getCanonicalName());
 		try {
 			//esql.begin(Connection.TRANSACTION_READ_COMMITTED, null);
-			begin();
+			 begin();
 			((BaseDao) dao).setEsql(esql);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} finally {
-			esql.end();
 		}
 
 		return type.cast(dao);

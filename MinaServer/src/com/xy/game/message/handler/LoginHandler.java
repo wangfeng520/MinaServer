@@ -6,6 +6,7 @@ import net.sf.json.JSONObject;
 import org.apache.mina.core.session.IoSession;
 
 import zizi.ejson.JSON;
+import zuojie.esql.Esql;
 
 import com.xy.common.model.MyMessage;
 import com.xy.common.model.User;
@@ -19,12 +20,18 @@ import com.xy.game.manager.Managers;
  */
 public class LoginHandler extends AbstractHandler{
 	
-	private UserDao userDao = Managers.get(DaoManager.class).getDao(UserDao.class);
+	private UserDao userDao ;
 	
 	public LoginHandler(){}
 	
 	public LoginHandler(IoSession session, JSONObject message){
 		super(session,message);
+	}
+	
+	
+	@Override
+	public void initDaoEsql(Esql e) {
+		userDao = Managers.get(DaoManager.class).getDao(UserDao.class, e);
 	}
 	
 	@Override
