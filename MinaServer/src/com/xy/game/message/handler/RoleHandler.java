@@ -6,24 +6,31 @@ import net.sf.json.JSONObject;
 import org.apache.mina.core.session.IoSession;
 
 import zizi.ejson.JSON;
+import zuojie.esql.Esql;
 
 import com.xy.common.model.MyMessage;
 import com.xy.common.model.User;
 import com.xy.common.struct.constants.MessageType;
 import com.xy.db.dao.UserDao;
-import com.xy.db.dao.UserDaoImpl;
+import com.xy.db.esql.DaoManager;
+import com.xy.game.manager.Managers;
 
 /**
  * 角色相关信息处理器
  */
 public class RoleHandler extends AbstractHandler{
 	
-	private UserDao userDao = new UserDaoImpl();
+	private UserDao userDao ;
 	
 	public RoleHandler(){}
 	
 	public RoleHandler(IoSession session, JSONObject message){
 		super(session,message);
+	}
+	
+	@Override
+	public void initDaoEsql(Esql e) {
+		userDao = Managers.get(DaoManager.class).getDao(UserDao.class, e);
 	}
 	
 	@Override

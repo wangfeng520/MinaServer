@@ -32,7 +32,14 @@ public class DataSourceSelector {
 		this.database = database;
 
 		// 读取master
-		EsqlConfig config = readConfig(null);
+		EsqlConfig config = new EsqlConfig();
+		config.setDatabase("POSTGRESQL");
+		config.setName("lvshuiqiao");
+		config.setPassword("123");
+		config.setPort(5432);
+		config.setUser("wangfeng");
+		config.setServer("localhost");
+		
 		master = DataSourceBuilder.build(config);
 
 	}

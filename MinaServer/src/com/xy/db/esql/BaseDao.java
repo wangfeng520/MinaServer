@@ -1,8 +1,8 @@
 package com.xy.db.esql;
 
-import com.xy.common.struct.IdBean;
-
 import zuojie.esql.Esql;
+
+import com.xy.common.struct.IdBean;
 
 /**
  * 所有数据访问对象的基类

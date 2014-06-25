@@ -1,12 +1,12 @@
 package com.xy.db.esql;
 
-import com.xy.game.manager.Manager;
-
 import zuojie.esql.Esql;
+
+import com.xy.game.manager.Manager;
 
 
 public interface DaoManager  extends Manager{
-	public <T> T getDao(Class<T> type);
+	public <T> T getDao(Class<T> type, Esql e);
 
 	public Esql getEsql();
 

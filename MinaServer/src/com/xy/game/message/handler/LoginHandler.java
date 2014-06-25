@@ -1,16 +1,15 @@
 package com.xy.game.message.handler;
 
-
 import net.sf.json.JSONObject;
 
 import org.apache.mina.core.session.IoSession;
 
 import zizi.ejson.JSON;
+import zuojie.esql.Esql;
 
 import com.xy.common.model.MyMessage;
 import com.xy.common.model.User;
 import com.xy.common.struct.constants.MessageType;
-import com.xy.db.dao.TestDAO;
 import com.xy.db.dao.UserDao;
 import com.xy.db.esql.DaoManager;
 import com.xy.game.manager.Managers;
@@ -18,19 +17,25 @@ import com.xy.game.manager.Managers;
 /**
  * 角色相关信息处理器
  */
-public class LoginHandler extends AbstractHandler{
-	
-	private UserDao userDao = Managers.get(DaoManager.class).getDao(UserDao.class);
-	
-	public LoginHandler(){}
-	
-	public LoginHandler(IoSession session, JSONObject message){
-		super(session,message);
+public class LoginHandler extends AbstractHandler {
+
+	private UserDao userDao;
+
+	public LoginHandler() {
 	}
-	
+
+	public LoginHandler(IoSession session, JSONObject message) {
+		super(session, message);
+	}
+
+	@Override
+	public void initDaoEsql(Esql e) {
+		userDao = Managers.get(DaoManager.class).getDao(UserDao.class, e);
+	}
+
 	@Override
 	public void handle() {
-		switch(message.getInt("msgType")){
+		switch (message.getInt("msgType")) {
 		case MessageType.LOGIN_GET:
 			getRoleInfo();
 			break;
@@ -38,40 +43,28 @@ public class LoginHandler extends AbstractHandler{
 			break;
 		}
 	}
-	
+
 	/**
 	 * 获取角色全部信息
 	 */
-	public void getRoleInfo(){
+	public void getRoleInfo() {
 		//JSONObject sendJson = new JSONObject();
-		try {
-		
-		JSONObject sendJson = message.getJSONObject("data");
-		int megType = message.getInt("msgType");
-		String login = sendJson.getString("login");
-		String psw = sendJson.getString("psw");
-		TestDAO tDao = new TestDAO();
-		User u =  tDao.getUser(login, psw);//userDao.getUser(login, psw);
+				try {
+					MyMessage<User> m = new MyMessage<User>();
+					m.setOk(true);
+					m.setMsgType(1);
+					User u = userDao.getUser("wf", "123");
 
-		MyMessage<User> m = new MyMessage<User>();
-		m.setMsgType(megType);
-		if (u != null){	
-			m.setOk(true);
-			m.setData(u);
-		}else{
-			m.setOk(false);
-		}
-		String s = JSON.string(m);
-			//sendJson = JSONObject.fromObject(u);
-		session.write(s);
-			
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		return;
+					m.setData(u);
+					String s = JSON.string(m);
+
+					session.write(s);
+
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+
+				return;
 	}
 }
-
-

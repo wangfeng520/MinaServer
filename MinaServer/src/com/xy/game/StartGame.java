@@ -7,14 +7,15 @@ import java.sql.SQLException;
 
 import org.apache.log4j.Logger;
 
+import zuojie.esql.Esql;
+import zuojie.esql.build.EsqlBuilder;
+
 import com.xy.common.Tools;
-import com.xy.db.esql.Action;
-import com.xy.db.esql.DaoManager;
 import com.xy.db.esql.DaoManagerImpl;
 import com.xy.db.jdbc.ConnectionPoolManager;
-import com.xy.game.manager.Manager;
 import com.xy.game.manager.Managers;
 import com.xy.game.message.MessageManager;
+import com.xy.game.message.handler.LoginHandler;
 import com.xy.net.mina.service.MinaNetworkManager;
 
 /**
@@ -46,8 +47,28 @@ public class StartGame {
 		network.startNetwork();
 
 		// System.out.println(test("ÄãºÃ", "ÄãºÃ"));
+		test1();
 	}
 
+	
+	public static void test1(){
+		LoginHandler handler = new LoginHandler();
+		try {
+			Esql esql = EsqlBuilder.build(Esql.POSTGRESQL);
+			try {
+				handler.initDaoEsql(esql);
+				handler.getRoleInfo();
+				esql.commit();
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				esql.end();
+			}
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+	}
 	public static int test(String playerName, String password) {
 		try {
 			Connection conn = ConnectionPoolManager.getConnection();
