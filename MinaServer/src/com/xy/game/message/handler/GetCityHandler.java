@@ -1,5 +1,7 @@
 package com.xy.game.message.handler;
 
+import java.util.List;
+
 import net.sf.json.JSONObject;
 
 import org.apache.log4j.Logger;
@@ -9,9 +11,11 @@ import zizi.ejson.JSON;
 import zuojie.esql.Esql;
 
 import com.xy.common.model.MyMessage;
+import com.xy.common.model.city.UserCity;
+import com.xy.common.model.city.UserCityInfo;
 import com.xy.common.model.user.User;
 import com.xy.common.struct.constants.MessageType;
-import com.xy.db.dao.UserDao;
+import com.xy.db.dao.CityDao;
 import com.xy.db.esql.DaoManager;
 import com.xy.game.manager.Managers;
 
@@ -21,7 +25,8 @@ import com.xy.game.manager.Managers;
 public class GetCityHandler extends AbstractHandler {
 
 	private Logger log = Logger.getLogger(GetCityHandler.class);
-	private UserDao userDao;
+	private CityDao cityDao;
+	
 
 	public GetCityHandler() {
 	}
@@ -32,14 +37,14 @@ public class GetCityHandler extends AbstractHandler {
 
 	@Override
 	public void initDaoEsql(Esql e) {
-		userDao = Managers.get(DaoManager.class).getDao(UserDao.class, e);
+		cityDao = Managers.get(DaoManager.class).getDao(CityDao.class, e);
 	}
 
 	@Override
 	public void handle() {
 		switch (message.getInt("msgType")) {
-		case MessageType.LOGIN_GET:
-			getRoleInfo();
+		case MessageType.CITY_GIT:
+			getUserCityInfo();
 			break;
 		default:
 			break;
@@ -49,28 +54,29 @@ public class GetCityHandler extends AbstractHandler {
 	/**
 	 * 获取角色全部信息
 	 */
-	public void getRoleInfo() {
+	public void getUserCityInfo() {
 
 		try {
-			MyMessage<User> m = new MyMessage<User>();
-			
-			
+			MyMessage<UserCityInfo> m = new MyMessage<UserCityInfo>();
+						
 			JSONObject data = message.getJSONObject("data");
-			String login = data.getString("login");
-			String psw = data.getString("psw");
-			
+			long userId = data.getLong("userId");			
 			m.setMsgType(message.getInt("msgType"));
-			User u = userDao.getUserByLogin(login, psw);
+		
+			
+			List<UserCity> citys =cityDao.getUserCitys(userId);
+			UserCityInfo uci = new UserCityInfo(userId);
+			uci.setUserCitylists(citys);
 
-			if (u == null){
+			if (citys.isEmpty()){
 				m.setOk(false);
 			}else{
 				m.setOk(true);
 			}
-			m.setData(u);
+			m.setData(uci);
 			String s = JSON.string(m);
 			
-			log.info("getRoleInfo 返回数据:" + s);
+			log.info("getUserCityInfo 返回数据:" + s);
 
 			session.write(s);
 

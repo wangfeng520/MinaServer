@@ -11,6 +11,9 @@ public class MessageType {
 	/**验证登陆*/
 	public static final int LOGIN_GET = 101;
 	
+	/**验证city*/
+	public static final int CITY_GIT = 102;
+	
 	/**获取人物基本信息*/
 	public static final int ROLE_GET = 1101;
 	
