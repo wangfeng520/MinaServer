@@ -35,8 +35,9 @@ public class MessageManager {
 
 	public MessageManager(IoSession session, Object message) {
 		this.session = session;
+		
 		log.info(message);
-
+		
 		this.message = JSONObject.fromObject(message.toString());
 
 		log.info(message);
