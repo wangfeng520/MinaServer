@@ -7,13 +7,11 @@ import net.sf.json.JSONObject;
 import org.apache.log4j.Logger;
 import org.apache.mina.core.session.IoSession;
 
-import zizi.ejson.JSON;
 import zuojie.esql.Esql;
 
 import com.xy.common.model.MyMessage;
 import com.xy.common.model.city.UserCity;
 import com.xy.common.model.city.UserCityInfo;
-import com.xy.common.model.user.User;
 import com.xy.common.struct.constants.MessageType;
 import com.xy.db.dao.CityDao;
 import com.xy.db.esql.DaoManager;
@@ -74,7 +72,9 @@ public class GetCityHandler extends AbstractHandler {
 				m.setOk(true);
 			}
 			m.setData(uci);
-			String s = JSON.string(m);
+			JSONObject json = JSONObject.fromObject(m);
+			String s = json.toString();
+			
 			
 			log.info("getUserCityInfo ·µ»ØÊý¾Ý:" + s);
 

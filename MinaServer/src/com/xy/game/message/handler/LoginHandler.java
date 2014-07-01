@@ -5,7 +5,6 @@ import net.sf.json.JSONObject;
 import org.apache.log4j.Logger;
 import org.apache.mina.core.session.IoSession;
 
-import zizi.ejson.JSON;
 import zuojie.esql.Esql;
 
 import com.xy.common.model.MyMessage;
@@ -68,7 +67,9 @@ public class LoginHandler extends AbstractHandler {
 				m.setOk(true);
 			}
 			m.setData(u);
-			String s = JSON.string(m);
+			
+			JSONObject json = JSONObject.fromObject(m);
+			String s = json.toString();
 			
 			log.info("getRoleInfo ·µ»ØÊý¾Ý:" + s);
 

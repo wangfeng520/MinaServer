@@ -5,7 +5,6 @@ import net.sf.json.JSONObject;
 
 import org.apache.mina.core.session.IoSession;
 
-import zizi.ejson.JSON;
 import zuojie.esql.Esql;
 
 import com.xy.common.model.MyMessage;
@@ -62,7 +61,9 @@ public class RoleHandler extends AbstractHandler{
 		m.setOk(true);
 		m.setMsgType(1);
 		m.setData(user);
-		String s = JSON.string(m);
+		JSONObject json = JSONObject.fromObject(m);
+		String s = json.toString();
+		
 			//sendJson = JSONObject.fromObject(u);
 		session.write(s);
 			
