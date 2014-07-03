@@ -8,9 +8,9 @@ create table t_city
 	
 	exp						int8			   not null default 0,				-- 获取经验
 	coin					int8			   not null default 0,				-- 获取金币
-	desc					varchar(256),										-- 描述
+	mark                    varchar(256),										-- 描述
 						
-	unique(name),	
+    unique(name),	
 	primary key (id)
 );
 
@@ -19,7 +19,7 @@ create table t_user_city
 (
 	id						bigserial,
 	user_id					bigint              not null references t_user,
-	city_id					int4                not null,						-- 关卡ID
+	city_id					int4                not null references t_city,						-- 关卡ID
 	star					int4,												-- 获取的心		
 						
 	unique(user_id, city_id),	
