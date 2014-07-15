@@ -10,8 +10,7 @@ public class UserCityInfo{
 	public UserCityInfo(long userId){
 		this.userId = userId;
 	}
-	
-	
+		
 	public long getUserId() {
 		return userId;
 	}

@@ -29,7 +29,7 @@ create table t_level_exp
 (
 	id						bigserial,
 	level         			int4                not null,   			  						--角色的等级
-	exp            			int8				not null,										--角色的当前经验值
+	exp            			int8				not null,										--角色的等级对应经验值
 	unique(level),
 	primary key (id)
 );
