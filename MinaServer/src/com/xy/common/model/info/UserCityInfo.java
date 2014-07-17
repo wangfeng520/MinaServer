@@ -1,6 +1,8 @@
-package com.xy.common.model.city;
+package com.xy.common.model.info;
 
 import java.util.List;
+
+import com.xy.common.model.city.UserCity;
 
 public class UserCityInfo{
 

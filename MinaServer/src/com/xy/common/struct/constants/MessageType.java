@@ -14,6 +14,9 @@ public class MessageType {
 	/**验证city*/
 	public static final int CITY_GIT = 102;
 	
+	/**获取副本*/
+	public static final int CITY_FUBEN = 103;
+	
 	/**获取人物基本信息*/
 	public static final int ROLE_GET = 1101;
 	

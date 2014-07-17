@@ -1,7 +1,10 @@
-package com.xy.db.dao;
+package com.xy.db.dao.city;
 
 import java.util.List;
 
+import zuojie.esql.util.QueryBuilder;
+
+import com.xy.common.model.city.Fuben;
 import com.xy.common.model.city.UserCity;
 import com.xy.db.esql.BaseDao;
 
@@ -18,4 +21,14 @@ public class CityDaoImpl extends BaseDao implements CityDao{
 		return esql.list(UserCity.class, sql, userId);
 	}
 
+	@Override
+	public List<Fuben> ListFubens(Integer type) throws Exception{		
+		QueryBuilder qb = new QueryBuilder("select * from t_fuben where 1 = 1");
+		if (type != null) qb.append(" and type = ?", type);
+		qb.append(" order by id");
+		
+		return qb.list(esql, Fuben.class);		
+	}
+	
+	
 }
