@@ -14,6 +14,7 @@ import com.xy.db.jdbc.ConnectionPoolManager;
 /**
  * 角色信息连接对象
  */
+//TODO 暂时未用到
 public class RoleDAO {
 
 	/**

@@ -34,7 +34,11 @@ create table t_user_card
 	user_id                 bigint		  not null references t_user,
 	card_id                 bigint		  not null references t_user,
 	leader					int4          not null default 0,             -- 是否是队长
+	pos						int4,										  -- 当前布阵位置
+	enable					int4          not null default 0,			  -- 是否出战可用
+	
 
 	unique(user_id, card_id),
+	unique(user_id, pos),
 	primary key (id)
 );

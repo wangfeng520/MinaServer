@@ -75,6 +75,7 @@ public class GetFubenHandler extends AbstractHandler {
 				m.setOk(true);
 			}
 			m.setData(ufi);
+			
 			JSONObject json = JSONObject.fromObject(m);
 			String s = json.toString();
 			

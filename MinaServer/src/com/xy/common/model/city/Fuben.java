@@ -2,7 +2,7 @@ package com.xy.common.model.city;
 
 import com.xy.common.struct.IdBean;
 
-/** 游戏关卡*/
+/** 游戏副本*/
 public class Fuben extends IdBean{
 
 	private static final long serialVersionUID = 1L;

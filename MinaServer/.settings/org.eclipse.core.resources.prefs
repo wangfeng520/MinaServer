@@ -1,5 +1,5 @@
-#Wed Jun 11 13:54:26 CST 2014
 eclipse.preferences.version=1
+encoding//sql/data/city.sql=UTF-8
 encoding//src/com/xy/db=GBK
 encoding//src/com/xy/db/esql=UTF-8
 encoding//src/com/xy/net/mina=GBK

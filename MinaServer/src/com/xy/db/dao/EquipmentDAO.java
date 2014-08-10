@@ -11,6 +11,7 @@ import com.xy.db.jdbc.ConnectionPoolManager;
 /**
  * 装备数据连接对象 
  */
+// TODO 暂时未用到
 public class EquipmentDAO {
 	/**
 	 * 装备升级
