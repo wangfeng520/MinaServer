@@ -2,7 +2,7 @@ create table t_city
 (
 	id						bigserial,
 	name					varchar(64)        not null default '',				-- 关卡名称
-	icon					varchar(32)		   not null,						-- 关卡图标	
+	icon					varchar(128)	   not null,						-- 关卡图标	
 	level       			int4			   not null default 1,				-- 最低等级要求 
 	quality					int4               not null default 1,				-- 品质难度低到高1，2，3
 	tili					int4			   not null default 1,				-- 进入需要消耗的体力值

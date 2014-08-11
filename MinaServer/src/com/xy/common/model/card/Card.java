@@ -10,8 +10,8 @@ public class Card extends IdBean{
 	private String name;
 	private int level;
 	private String icon;
-	private int pinzhi;  // 品质
-	private int action;  // 攻击方式
+	private int quality;  // 品质
+	private int actionId;  // 攻击方式
 	private int totalHp; // 总血量
 	private int attack;  // 攻击力
 	private int fangyu;  // 防御力
@@ -41,20 +41,13 @@ public class Card extends IdBean{
 		this.icon = icon;
 	}
 
-	public int getPinzhi() {
-		return pinzhi;
+
+	public int getActionId() {
+		return actionId;
 	}
 
-	public void setPinzhi(int pinzhi) {
-		this.pinzhi = pinzhi;
-	}
-
-	public int getAction() {
-		return action;
-	}
-
-	public void setAction(int action) {
-		this.action = action;
+	public void setActionId(int actionId) {
+		this.actionId = actionId;
 	}
 
 	public int getTotalHp() {
@@ -95,6 +88,14 @@ public class Card extends IdBean{
 
 	public void setId(long id) {
 		this.id = id;
+	}
+
+	public int getQuality() {
+		return quality;
+	}
+
+	public void setQuality(int quality) {
+		this.quality = quality;
 	}
 	
 }
