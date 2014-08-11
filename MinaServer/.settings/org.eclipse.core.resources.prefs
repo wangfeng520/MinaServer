@@ -1,6 +1,11 @@
 eclipse.preferences.version=1
 encoding//sql/data/city.sql=UTF-8
+encoding//sql/schema=GBK
 encoding//src/com/xy/db=GBK
+encoding//src/com/xy/db/dao=UTF-8
 encoding//src/com/xy/db/esql=UTF-8
+encoding//src/com/xy/db/initData=UTF-8
+encoding//src/com/xy/loader=UTF-8
 encoding//src/com/xy/net/mina=GBK
 encoding//src/com/xy/net/mina/service/MinaSessionHandler.java=UTF-8
+encoding/sql=UTF-8

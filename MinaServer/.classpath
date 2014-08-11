@@ -17,5 +17,6 @@
 	<classpathentry kind="lib" path="/Users/wangfeng/Documents/workspace/jar包/now/commons-lang-2.1.jar"/>
 	<classpathentry kind="lib" path="/Users/wangfeng/Documents/workspace/jar包/now/commons-logging-1.1.3.jar"/>
 	<classpathentry kind="lib" path="/Users/wangfeng/Documents/workspace/jar包/now/ejson-runtime-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/wangfeng/git/MinaServer/MinaServer/jars_external/now/poi-3.9.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
