@@ -12,12 +12,12 @@ import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 
 /**
- * 包浏览器, 列出指定包及子包中所有类
+ * 鍖呮祻瑙堝櫒, 鍒楀嚭鎸囧畾鍖呭強瀛愬寘涓墍鏈夌被
 
  * 
  */
 public class JavaPackageExplorer {
-	private String name; // 包名
+	private String name; // 鍖呭悕
 
 	public JavaPackageExplorer(String name) {
 		this.name = name;

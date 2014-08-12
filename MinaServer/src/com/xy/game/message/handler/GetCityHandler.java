@@ -18,7 +18,7 @@ import com.xy.db.esql.DaoManager;
 import com.xy.game.manager.Managers;
 
 /**
- * ½ÇÉ«Ïà¹ØĞÅÏ¢´¦ÀíÆ÷
+ * è§’è‰²ç›¸å…³ä¿¡æ¯å¤„ç†å™¨
  */
 public class GetCityHandler extends AbstractHandler {
 
@@ -50,7 +50,7 @@ public class GetCityHandler extends AbstractHandler {
 	}
 
 	/**
-	 * »ñÈ¡½ÇÉ«È«²¿ĞÅÏ¢
+	 * è·å–è§’è‰²å…¨éƒ¨ä¿¡æ¯
 	 */
 	public void getUserCityInfo() {
 
@@ -76,7 +76,7 @@ public class GetCityHandler extends AbstractHandler {
 			String s = json.toString();
 			
 			
-			log.info("getUserCityInfo ·µ»ØÊı¾İ:" + s);
+			log.info("getUserCityInfo è¿”å›æ•°æ®:" + s);
 
 			session.write(s);
 

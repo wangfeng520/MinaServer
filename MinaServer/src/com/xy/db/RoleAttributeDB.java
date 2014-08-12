@@ -8,10 +8,10 @@ import com.xy.db.dao.RoleDAO;
 
 public class RoleAttributeDB {
 	
-	/**½ÇÉ«ÊôĞÔ */
+	/**è§’è‰²å±æ€§ */
 	public static HashMap<Integer, RoleAttribute> roleAttr = new HashMap<Integer, RoleAttribute> ();
 	
-	/**½«½ÇÉ«ÏàÓ¦µÈ¼¶ÊôĞÔÊı¾İ¼ÓÔØµ½ÄÚ´æÖĞ*/
+	/**å°†è§’è‰²ç›¸åº”ç­‰çº§å±æ€§æ•°æ®åŠ è½½åˆ°å†…å­˜ä¸­*/
 	public static void roleAttrInit(){
 		if(roleAttr == null){
 			roleAttr = new HashMap<Integer, RoleAttribute>();

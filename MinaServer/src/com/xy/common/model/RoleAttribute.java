@@ -6,15 +6,15 @@ public class RoleAttribute extends Bean{
 
 	private static final long serialVersionUID = 1L;
 	
-	private int id;				//id,´ú±íÏàÓ¦½ÇÉ«ÏàÓ¦µÈ¼¶£¬Èç1001£¬´ú±íµÈ¼¶1µÄÆïÊ¿
-	private int hp;				//ÑªÁ¿
-	private int atk;			//¹¥»÷
-	private int pDef;			//ÎïÀí·ÀÓù
-	private int mDef;			//Ä§·¨·ÀÓù
-	private int hit;			//ÃüÖĞ
-	private int antiHit;		//ÉÁ±Ü
-	private int crt;			//±©»÷
-	private int speed;			//ËÙ¶È
+	private int id;				//id,ä»£è¡¨ç›¸åº”è§’è‰²ç›¸åº”ç­‰çº§ï¼Œå¦‚1001ï¼Œä»£è¡¨ç­‰çº§1çš„éª‘å£«
+	private int hp;				//è¡€é‡
+	private int atk;			//æ”»å‡»
+	private int pDef;			//ç‰©ç†é˜²å¾¡
+	private int mDef;			//é­”æ³•é˜²å¾¡
+	private int hit;			//å‘½ä¸­
+	private int antiHit;		//é—ªé¿
+	private int crt;			//æš´å‡»
+	private int speed;			//é€Ÿåº¦
 	
 	public int getId() {
 		return id;

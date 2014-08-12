@@ -12,11 +12,11 @@ import org.apache.mina.transport.socket.nio.NioSocketAcceptor;
 import com.xy.net.mina.protocol.MinaCodecFactory;
 
 /**
- * mina¿ò¼ÜµÄÆô¶¯Àà(TCP³¤Á¬½Ó)£¬¼´ÓÎÏ··şÎñÆ÷IoService
+ * minaæ¡†æ¶çš„å¯åŠ¨ç±»(TCPé•¿è¿æ¥)ï¼Œå³æ¸¸æˆæœåŠ¡å™¨IoService
  */
 public class MinaNetworkManager implements Runnable {
 	/**
-	 *ÍøÂçÁ¬½Ó¹ÜÀíÆ÷¹¹Ôì·½·¨£¬¿ªÆôTCPÍøÂçÁ¬½ÓÏß³Ì 
+	 *ç½‘ç»œè¿æ¥ç®¡ç†å™¨æ„é€ æ–¹æ³•ï¼Œå¼€å¯TCPç½‘ç»œè¿æ¥çº¿ç¨‹ 
 	 */
 	
 	private Logger log = Logger.getLogger(MinaNetworkManager.class);
@@ -25,10 +25,10 @@ public class MinaNetworkManager implements Runnable {
 	}
 
 	/**
-	 * Æô¶¯ÍøÂçservice
+	 * å¯åŠ¨ç½‘ç»œservice
 	 */
 	public void startNetwork() throws Exception {
-		//IoAcceptor acceptor = new NioSocketAcceptor(1);//ÉèÖÃprocessor¸öÊıÎª5£¨cpuºËÊı+1£©
+		//IoAcceptor acceptor = new NioSocketAcceptor(1);//è®¾ç½®processorä¸ªæ•°ä¸º5ï¼ˆcpuæ ¸æ•°+1ï¼‰
 		NioSocketAcceptor acceptor = new NioSocketAcceptor();
 		acceptor.getFilterChain().addLast("Logger", new LoggingFilter());
 		//acceptor.getFilterChain().addLast("myChin", new ProtocolCodecFilter(new TextLineCodecFactory(Charset.forName("UTF-8"))));
@@ -53,14 +53,14 @@ public class MinaNetworkManager implements Runnable {
 	}
 
 	/**
-	 * ¹Ø±ÕÍøÂç
+	 * å…³é—­ç½‘ç»œ
 	 */
 	public void stopNetwork() {
 		return;
 	}
 
 	/**
-	 * ÓÃÓÚÆäËû×÷ÓÃ£¬±ÈÈç¶¨Ê±ÈÎÎñµÈ
+	 * ç”¨äºå…¶ä»–ä½œç”¨ï¼Œæ¯”å¦‚å®šæ—¶ä»»åŠ¡ç­‰
 	 */
 	public void run() {
 

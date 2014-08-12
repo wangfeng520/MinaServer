@@ -6,11 +6,11 @@ public class UserCard extends IdBean {
 
 	private static final long serialVersionUID = 1L;
 	private long id;
-	private long userId;    // 用户Id
-	private long cardId;    // 卡牌Id
-	private boolean leader; // 是否队长
-	private boolean enable; // 是否可用
-	private Integer pos;    // 阵型位置
+	private long userId;    // 鐢ㄦ埛Id
+	private long cardId;    // 鍗＄墝Id
+	private boolean leader; // 鏄惁闃熼暱
+	private boolean enable; // 鏄惁鍙敤
+	private Integer pos;    // 闃靛瀷浣嶇疆
 	
 	public long getId() {
 		return id;

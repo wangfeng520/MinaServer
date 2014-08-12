@@ -5,11 +5,11 @@ import java.util.List;
 
 public class FireDatas{
 
-	private boolean result; // Õ½¶·½á¹û
-	private int star;  // Õ½¶·ÆÀ¼¶
+	private boolean result; // æˆ˜æ–—ç»“æœ
+	private int star;  // æˆ˜æ–—è¯„çº§
 	
-	private List<StartData> startDatas;  // ¿ªÊ¼³õÊ¼Êı¾İ
-	private List<StepData> stepDatas;   // Ã¿»ØºÏÊı¾İ
+	private List<StartData> startDatas;  // å¼€å§‹åˆå§‹æ•°æ®
+	private List<StepData> stepDatas;   // æ¯å›åˆæ•°æ®
 	
 	public boolean isResult() {
 		return result;

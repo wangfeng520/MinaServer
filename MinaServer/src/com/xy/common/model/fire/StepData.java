@@ -2,13 +2,13 @@ package com.xy.common.model.fire;
 
 import java.util.List;
 
-/** Ã¿Ò»»ØºÏµÄĞÅÏ¢*/
+/** æ¯ä¸€å›åˆçš„ä¿¡æ¯*/
 public class StepData {
 	
-	private long skillId; // ¼¼ÄÜId
-	private long charId;  // ¹¥»÷ÕßId
-	private int actionId;   // ¹¥»÷·½Ê½
-	private List<EnemyData> enemyDatas; // µĞ·½ĞÅÏ¢
+	private long skillId; // æŠ€èƒ½Id
+	private long charId;  // æ”»å‡»è€…Id
+	private int actionId;   // æ”»å‡»æ–¹å¼
+	private List<EnemyData> enemyDatas; // æ•Œæ–¹ä¿¡æ¯
 	
 	public long getSkillId() {
 		return skillId;

@@ -2,7 +2,7 @@ package com.xy.common.model.card;
 
 import com.xy.common.struct.IdBean;
 
-/** ÓÎÏ·¿¨ÅÆ*/
+/** æ¸¸æˆå¡ç‰Œ*/
 public class Card extends IdBean{
 
 	private static final long serialVersionUID = 1L;
@@ -10,12 +10,12 @@ public class Card extends IdBean{
 	private String name;
 	private int level;
 	private String icon;
-	private int quality;  // Æ·ÖÊ
-	private int actionId;  // ¹¥»÷·½Ê½
-	private int totalHp; // ×ÜÑªÁ¿
-	private int attack;  // ¹¥»÷Á¦
-	private int fangyu;  // ·ÀÓùÁ¦
-	private String des;  // ÃèÊö
+	private int quality;  // å“è´¨
+	private int actionId;  // æ”»å‡»æ–¹å¼
+	private int totalHp; // æ€»è¡€é‡
+	private int attack;  // æ”»å‡»åŠ›
+	private int fangyu;  // é˜²å¾¡åŠ›
+	private String des;  // æè¿°
 
 	public String getName() {
 		return name;

@@ -7,13 +7,13 @@ import org.apache.mina.core.session.IoSession;
 import zuojie.esql.Esql;
 
 /**
- * 包含会话和消息及处理函数申明的抽象消息处理器
+ * 鍖呭惈浼氳瘽鍜屾秷鎭強澶勭悊鍑芥暟鐢虫槑鐨勬娊璞℃秷鎭鐞嗗櫒
  */
 public abstract class AbstractHandler {
-	/**会话*/
+	/**浼氳瘽*/
 	public IoSession session;
 	
-	/**消息*/
+	/**娑堟伅*/
 	public JSONObject message;
 	
 	public AbstractHandler(){}

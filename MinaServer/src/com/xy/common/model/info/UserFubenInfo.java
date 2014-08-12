@@ -7,7 +7,7 @@ import com.xy.common.model.city.Fuben;
 public class UserFubenInfo{
 
 	private long userId;
-	private int type;  // ¸±±¾Àà±ğ:¾«Ó¢¸±±¾¡¢ÆÕÍ¨¸±±¾¡¢»î¶¯¸±±¾
+	private int type;  // å‰¯æœ¬ç±»åˆ«:ç²¾è‹±å‰¯æœ¬ã€æ™®é€šå‰¯æœ¬ã€æ´»åŠ¨å‰¯æœ¬
 	private List<Fuben> fubens;  
 	
 	public UserFubenInfo(long userId){

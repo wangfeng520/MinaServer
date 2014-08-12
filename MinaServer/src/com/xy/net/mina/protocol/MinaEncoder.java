@@ -89,7 +89,7 @@ public class MinaEncoder implements ProtocolEncoder{
 		IoBuffer buf = IoBuffer.allocate(value.length() + 2)
 				.setAutoExpand(true);
 		buf.putInt(Tools.getWordCount(message.toString()));
-		System.out.println("ÏûÏ¢³¤-------------£º" + Tools.getWordCount(message.toString()));
+		System.out.println("æ¶ˆæ¯é•¿-------------ï¼š" + Tools.getWordCount(message.toString()));
 		buf.putString(value, encoder);
 
 		if (buf.position() > maxLineLength) {

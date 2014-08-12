@@ -15,7 +15,7 @@ import com.xy.db.esql.DaoManager;
 import com.xy.game.manager.Managers;
 
 /**
- * ½ÇÉ«Ïà¹ØĞÅÏ¢´¦ÀíÆ÷
+ * è§’è‰²ç›¸å…³ä¿¡æ¯å¤„ç†å™¨
  */
 public class LoginHandler extends AbstractHandler {
 
@@ -46,7 +46,7 @@ public class LoginHandler extends AbstractHandler {
 	}
 
 	/**
-	 * »ñÈ¡½ÇÉ«È«²¿ĞÅÏ¢
+	 * è·å–è§’è‰²å…¨éƒ¨ä¿¡æ¯
 	 */
 	public void getRoleInfo() {
 
@@ -71,7 +71,7 @@ public class LoginHandler extends AbstractHandler {
 			JSONObject json = JSONObject.fromObject(m);
 			String s = json.toString();
 			
-			log.info("getRoleInfo ·µ»ØÊı¾İ:" + s);
+			log.info("getRoleInfo è¿”å›æ•°æ®:" + s);
 
 			session.write(s);
 

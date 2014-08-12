@@ -19,34 +19,34 @@ import com.xy.game.message.handler.LoginHandler;
 import com.xy.net.mina.service.MinaNetworkManager;
 
 /**
- * ÓÎÏ·Ö÷Ïß³Ì£¬·şÎñ¶ËÆô¶¯³ÌĞò
+ * æ¸¸æˆä¸»çº¿ç¨‹ï¼ŒæœåŠ¡ç«¯å¯åŠ¨ç¨‹åº
  */
 public class StartGame {
 	private static Logger log = Logger.getLogger(StartGame.class);
 
 	public static void main(String[] args) throws Exception {
-		log.info("·şÎñ¶ËÆô¶¯!");
-		/** Ó²ÅÌÊı¾İ¿â³õÊ¼»¯ÅäÖÃĞÅÏ¢ */
+		log.info("æœåŠ¡ç«¯å¯åŠ¨!");
+		/** ç¡¬ç›˜æ•°æ®åº“åˆå§‹åŒ–é…ç½®ä¿¡æ¯ */
 		ConnectionPoolManager.JDBCInit();
 
-		/** ÏûÏ¢ĞÅÏ¢³õÊ¼»¯ */
+		/** æ¶ˆæ¯ä¿¡æ¯åˆå§‹åŒ– */
 		MessageManager.init();
 
-		// /**ÄÚ´æÊı¾İ¿â³õÊ¼»¯*/
-		// System.out.println("µÈ´ıÄÚ´æÊı¾İ¿â³õÊ¼»¯...");
+		// /**å†…å­˜æ•°æ®åº“åˆå§‹åŒ–*/
+		// System.out.println("ç­‰å¾…å†…å­˜æ•°æ®åº“åˆå§‹åŒ–...");
 		// DBManager.dbInit();
-		// System.out.println("ok£¡£¡£¡");
+		// System.out.println("okï¼ï¼ï¼");
 		Managers.addManager(new DaoManagerImpl());
-		// ³õÊ¼»¯¹ÜÀíÆ÷
+		// åˆå§‹åŒ–ç®¡ç†å™¨
 		DaoManagerImpl dm = Managers.get(DaoManagerImpl.class);
 		dm.initialize();
 		
 
-		/** TCP³¤Á¬½Ó·şÎñ£¬¼´ÓÎÏ··şÎñÆ÷£¨º¬µÇÂ½·şÎñÆ÷£© */
+		/** TCPé•¿è¿æ¥æœåŠ¡ï¼Œå³æ¸¸æˆæœåŠ¡å™¨ï¼ˆå«ç™»é™†æœåŠ¡å™¨ï¼‰ */
 		MinaNetworkManager network = new MinaNetworkManager();
 		network.startNetwork();
 
-		// System.out.println(test("ÄãºÃ", "ÄãºÃ"));
+		// System.out.println(test("ä½ å¥½", "ä½ å¥½"));
 		// test1();
 	}
 

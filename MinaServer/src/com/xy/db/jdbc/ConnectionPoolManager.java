@@ -6,20 +6,20 @@ import java.sql.SQLException;
 import org.apache.log4j.Logger;
 
 /**
- * Á¬½Ó³Ø¹ÜÀíÕß£¨·â×°Êı¾İ¿âÁ¬½Ó³Ø£©£¬Ìá¹©´ÓÁ¬½Ó³ØÖĞ»ñÈ¡Á¬½ÓºÍ·µ»¹Á¬½ÓµÄ·½·¨
+ * è¿æ¥æ± ç®¡ç†è€…ï¼ˆå°è£…æ•°æ®åº“è¿æ¥æ± ï¼‰ï¼Œæä¾›ä»è¿æ¥æ± ä¸­è·å–è¿æ¥å’Œè¿”è¿˜è¿æ¥çš„æ–¹æ³•
  */
 public class ConnectionPoolManager {
 	
 	static Logger log = Logger.getLogger(ConnectionPoolManager.class);
 	/**
-	 * ³õÊ¼»¯Êı¾İ¿âÅäÖÃĞÅÏ¢
+	 * åˆå§‹åŒ–æ•°æ®åº“é…ç½®ä¿¡æ¯
 	 */
 	public static void JDBCInit(){
-		log.info("³õÊ¼»¯Êı¾İ¿âÅäÖÃĞÅÏ¢");
+		log.info("åˆå§‹åŒ–æ•°æ®åº“é…ç½®ä¿¡æ¯");
 		ConnectionPool.JDBCInit();
 	}
 	/**
-	 *´ÓÁ¬½Ó³ØÖĞ»ñÈ¡¿ÉÓÃÁ¬½Ó
+	 *ä»è¿æ¥æ± ä¸­è·å–å¯ç”¨è¿æ¥
 	 */
 	public static Connection getConnection(){
 		Connection conn = ConnectionPool.getConnection();
@@ -33,7 +33,7 @@ public class ConnectionPoolManager {
 	}
 
 	/**
-	 * ½«ÓÃÍêµÄÁ¬½Ó·µ»Øµ½Á¬½Ó³ØÖĞÒÔ´ı·ÖÅä
+	 * å°†ç”¨å®Œçš„è¿æ¥è¿”å›åˆ°è¿æ¥æ± ä¸­ä»¥å¾…åˆ†é…
 	 */
 	public static void pushBackConnection(Connection conn){
 		System.out.println("Connection push: " + conn);

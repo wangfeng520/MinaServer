@@ -18,9 +18,7 @@ public class LoadExcle
 	
 	public static void main(String[] args) throws Exception
 	{
-		
-//		File file = new File("./user.xls");
-		File file=new File("resource" + java.io.File.separator +"doc"+java.io.File.separator+ "user.xls"); //File.separator表示根目录，比如现在就表示在D盘下。 
+		File file=new File("resource" + java.io.File.separator +"doc"+java.io.File.separator+ "user.xls"); 
 		
 		Jdbc3PoolingDataSource source = new Jdbc3PoolingDataSource();
 		source.setServerName("localhost");

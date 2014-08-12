@@ -2,18 +2,18 @@ package com.xy.common.model.city;
 
 import com.xy.common.struct.IdBean;
 
-/** ÓÎÏ·¸±±¾*/
+/** æ¸¸æˆå‰¯æœ¬*/
 public class Fuben extends IdBean{
 
 	private static final long serialVersionUID = 1L;
 	private long id;
 	private String name;
 	private String icon;
-	private int type; // ÀàĞÍ 1£ºÆÕÍ¨¸±±¾ 2£º¾«Ó¢¸±±¾ 3:»î¶¯¸±±¾
+	private int type; // ç±»å‹ 1ï¼šæ™®é€šå‰¯æœ¬ 2ï¼šç²¾è‹±å‰¯æœ¬ 3:æ´»åŠ¨å‰¯æœ¬
 	private int level;
-	private int quality; // Æ·ÖÊ
+	private int quality; // å“è´¨
 	
-	private String des; //ÃèÊö
+	private String des; //æè¿°
 	
 	public String getName() {
 		return name;

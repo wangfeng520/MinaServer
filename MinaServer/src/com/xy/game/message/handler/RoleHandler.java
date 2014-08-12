@@ -15,7 +15,7 @@ import com.xy.db.esql.DaoManager;
 import com.xy.game.manager.Managers;
 
 /**
- * ½ÇÉ«Ïà¹ØĞÅÏ¢´¦ÀíÆ÷
+ * è§’è‰²ç›¸å…³ä¿¡æ¯å¤„ç†å™¨
  */
 public class RoleHandler extends AbstractHandler{
 	
@@ -49,7 +49,7 @@ public class RoleHandler extends AbstractHandler{
 	}
 	
 	/**
-	 * »ñÈ¡½ÇÉ«È«²¿ĞÅÏ¢
+	 * è·å–è§’è‰²å…¨éƒ¨ä¿¡æ¯
 	 * @throws Exception 
 	 */
 	public void getRoleInfo() throws Exception{

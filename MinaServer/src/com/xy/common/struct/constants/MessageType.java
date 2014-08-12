@@ -1,103 +1,103 @@
 package com.xy.common.struct.constants;
 
 /**
- * ¿Í»§¶ËÏûÏ¢ÀàĞÍ
- * 1xxx£º´ú±íÈËÎïÏà¹ØÏûÏ¢£» 2xxx£º´ú±í×°±¸Ïà¹ØÏûÏ¢£»3xxx£º´ú±í¼¼ÄÜÏà¹ØÏûÏ¢
- * 4xxx£º´ú±í»ï°éÏà¹ØÏûÏ¢£» 5xxx£º´ú±íÕ½¶·Ïà¹ØÏûÏ¢; 6xxx: ´ú±íÎïÆ·Ïà¹ØĞÅÏ¢
- * µÚÒ»Î»Îª´óÀà£¬µÚ¶şÎ»Îª×ÓÀà£¬ºóÁ½Î»Îª¾ßÌåÏûÏ¢
+ * å®¢æˆ·ç«¯æ¶ˆæ¯ç±»å‹
+ * 1xxxï¼šä»£è¡¨äººç‰©ç›¸å…³æ¶ˆæ¯ï¼› 2xxxï¼šä»£è¡¨è£…å¤‡ç›¸å…³æ¶ˆæ¯ï¼›3xxxï¼šä»£è¡¨æŠ€èƒ½ç›¸å…³æ¶ˆæ¯
+ * 4xxxï¼šä»£è¡¨ä¼™ä¼´ç›¸å…³æ¶ˆæ¯ï¼› 5xxxï¼šä»£è¡¨æˆ˜æ–—ç›¸å…³æ¶ˆæ¯; 6xxx: ä»£è¡¨ç‰©å“ç›¸å…³ä¿¡æ¯
+ * ç¬¬ä¸€ä½ä¸ºå¤§ç±»ï¼Œç¬¬äºŒä½ä¸ºå­ç±»ï¼Œåä¸¤ä½ä¸ºå…·ä½“æ¶ˆæ¯
  */
 public class MessageType {
 	
-	/**ÑéÖ¤µÇÂ½*/
+	/**éªŒè¯ç™»é™†*/
 	public static final int LOGIN_GET = 101;
 	
-	/**ÑéÖ¤city*/
+	/**éªŒè¯city*/
 	public static final int CITY_GIT = 102;
 	
-	/**»ñÈ¡¸±±¾*/
+	/**è·å–å‰¯æœ¬*/
 	public static final int CITY_FUBEN = 103;
 	
-	/**»ñÈ¡ÈËÎï»ù±¾ĞÅÏ¢*/
+	/**è·å–äººç‰©åŸºæœ¬ä¿¡æ¯*/
 	public static final int ROLE_GET = 1101;
 	
-	/**×°±¸»ñÈ¡£¬²âÊÔ*/
+	/**è£…å¤‡è·å–ï¼Œæµ‹è¯•*/
 	public static final int EQUIPMENT_GET = 2100;
 	
-	/**×°±¸½âËø*/
+	/**è£…å¤‡è§£é”*/
 	public static final int EQUIPMENT_UNLOCK = 2101;
 	
-	/**×°±¸Éı¼¶*/
+	/**è£…å¤‡å‡çº§*/
 	public static final int EQUIPMENT_UPGRADE = 2102;
 	
-	/**×°±¸Ğ¯´ø*/
+	/**è£…å¤‡æºå¸¦*/
 	public static final int EQUIPMENT_CARRY = 2103;
 	
-	/**×°±¸±¦Ê¯ÏâÇ¶*/
+	/**è£…å¤‡å®çŸ³é•¶åµŒ*/
 	public static final int EQUIPMENT_EMBED = 2104;
 	
-	/**×°±¸´«³Ğ*/
+	/**è£…å¤‡ä¼ æ‰¿*/
 	public static final int EQUIPMENT_INHERIT = 2105;
 	
-	/**¼¼ÄÜ»ñÈ¡,²âÊÔÓÃ*/
+	/**æŠ€èƒ½è·å–,æµ‹è¯•ç”¨*/
 	public static final int SKILL_GET = 3100;
 	
-	/**¼¼ÄÜÑ§Ï°*/
+	/**æŠ€èƒ½å­¦ä¹ */
 	public static final int SKILL_LEARN = 3101;
 	
-	/**¼¼ÄÜÉı¼¶*/
+	/**æŠ€èƒ½å‡çº§*/
 	public static final int SKILL_UPGRADE = 3102;
 	
-	/**¼¼ÄÜĞ¯´ø*/
+	/**æŠ€èƒ½æºå¸¦*/
 	public static final int SKILL_CARRY = 3103;
 	
-	/**»ñÈ¡»ï°é*/
+	/**è·å–ä¼™ä¼´*/
 	public static final int PARTNER_GET = 4101;
 	
-	/**»ï°éÉı¼¶*/
+	/**ä¼™ä¼´å‡çº§*/
 	public static final int PARTNER_UPGRADE = 4102;
 	
-	/**»ï°éÕĞÄ¼*/
+	/**ä¼™ä¼´æ‹›å‹Ÿ*/
 	public static final int PARTNER_RECRUIT = 4103;
 	
-	/**»ï°é´«³Ğ*/
+	/**ä¼™ä¼´ä¼ æ‰¿*/
 	public static final int PARTNER_INHERIT = 4104;
 	
-	/**»ï°é¼¼ÄÜÖØÖÃ*/
+	/**ä¼™ä¼´æŠ€èƒ½é‡ç½®*/
 	public static final int PARTNER_SKILL_RESET = 4105;
 	
-	/**»ï°éÉÏÕó*/
+	/**ä¼™ä¼´ä¸Šé˜µ*/
 	public static final int PARTNER_CHANGE_PARTNER = 4106;
 
-  	/**pveÕ½¶·¿ªÊ¼*/
+  	/**pveæˆ˜æ–—å¼€å§‹*/
   	public static final int PVE_BATTLE_START = 5101;
   	
-  	/**pveÕ½¶·ÏÂÒ»»ØºÏ*/
+  	/**pveæˆ˜æ–—ä¸‹ä¸€å›åˆ*/
   	public static final int PVE_BATTLE_NEXT_STEP = 5102;
   	
-  	/**pveÕ½¶·½áÊø¿ªÆô±¦Ïä*/
+  	/**pveæˆ˜æ–—ç»“æŸå¼€å¯å®ç®±*/
   	public static final int PVE_BATTLE_OPEN_CHEST = 5103;
   	
-  	/**pvpÕ½¶·¿ªÊ¼*/
+  	/**pvpæˆ˜æ–—å¼€å§‹*/
   	public static final int PVP_BATTLE_START = 5201;
   	
-  	/**pvpÕ½¶·ÏÂÒ»»ØºÏ*/
+  	/**pvpæˆ˜æ–—ä¸‹ä¸€å›åˆ*/
   	public static final int PVP_BATTLE_NEXT_STEP = 5202;
   	
-  	/**pvpÌìÌİÆ¥Åä*/
+  	/**pvpå¤©æ¢¯åŒ¹é…*/
   	public static final int PVP_BATTLE_LADDER_MATCH = 5203;
   	
-  	/**Ôö¼ÓÌôÕ½´ÎÊı*/
+  	/**å¢åŠ æŒ‘æˆ˜æ¬¡æ•°*/
   	public static final int PVP_ADD_LAST_TIMES = 5204;
   	
-  	/**ÖØÖÃÌôÕ½Ê±¼ä*/
+  	/**é‡ç½®æŒ‘æˆ˜æ—¶é—´*/
   	public static final int PVP_RESET_CHAL_TIME = 5205;
   	
-  	/**»ñÈ¡ÎïÆ·ĞÅÏ¢*/
+  	/**è·å–ç‰©å“ä¿¡æ¯*/
   	public static final int ITEM_GET = 6100;
   	
-  	/**±¦Ê¯ºÏ³É*/
+  	/**å®çŸ³åˆæˆ*/
   	public static final int JEWEL_COMPOUND = 6101;
   	
-  	/**·ûÎÄºÏ³É*/
+  	/**ç¬¦æ–‡åˆæˆ*/
   	public static final int RUNE_COMPOUND = 6201;
 }

@@ -2,7 +2,7 @@ package com.xy.common.model.city;
 
 import com.xy.common.struct.IdBean;
 
-/** ÓÎÏ·¹Ø¿¨*/
+/** æ¸¸æˆå…³å¡*/
 public class City extends IdBean{
 
 	private static final long serialVersionUID = 1L;
@@ -10,11 +10,11 @@ public class City extends IdBean{
 	private String name;
 	private String icon;
 	private int level;
-	private int quality; // Æ·ÖÊ,ÄÑ¶È
-	private int tili;    // ÏûºÄÌåÁ¦
-	private int exp;	 // Í¨¹Ø½±Àø¾­Ñé
-	private int coin;	 // Í¨¹Ø½±Àø½ğ±Ò
-	private String des; //ÃèÊö
+	private int quality; // å“è´¨,éš¾åº¦
+	private int tili;    // æ¶ˆè€—ä½“åŠ›
+	private int exp;	 // é€šå…³å¥–åŠ±ç»éªŒ
+	private int coin;	 // é€šå…³å¥–åŠ±é‡‘å¸
+	private String des; //æè¿°
 	
 	public String getName() {
 		return name;

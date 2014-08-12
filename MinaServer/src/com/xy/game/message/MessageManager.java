@@ -18,19 +18,19 @@ import com.xy.game.message.handler.AbstractHandler;
 public class MessageManager {
 
 	private Logger log = Logger.getLogger(MessageManager.class);
-	/**ÏûÏ¢ÀàĞÍÅäÖÃÎÄ¼ş*/
+	/**æ¶ˆæ¯ç±»å‹é…ç½®æ–‡ä»¶*/
 	private static Tools properties;
 
-	/**»á»°*/
+	/**ä¼šè¯*/
 	private IoSession session;
 
-	/**ÏûÏ¢*/
+	/**æ¶ˆæ¯*/
 	private JSONObject message;
 
-	/**session¼¯ºÏ*/
+	/**sessioné›†åˆ*/
 	public static HashMap<Long, IoSession> sessionSet = new HashMap<Long, IoSession>();
 
-	/**ÒÑ³É¹¦µÇÂ½µÄÍæ¼Òsession¼¯ºÏ*/
+	/**å·²æˆåŠŸç™»é™†çš„ç©å®¶sessioné›†åˆ*/
 	public static HashMap<String, IoSession> playerSet = new HashMap<String, IoSession>();
 
 	public MessageManager(IoSession session, Object message) {
@@ -50,7 +50,7 @@ public class MessageManager {
 	}
 
 	/**
-	 * ½ÓÊÕÏûÏ¢£¬²¢½«ÏûÏ¢·¢ËÍµ½Ïà¶ÔÓ¦µÄÏûÏ¢´¦ÀíÕß´¦Àí
+	 * æ¥æ”¶æ¶ˆæ¯ï¼Œå¹¶å°†æ¶ˆæ¯å‘é€åˆ°ç›¸å¯¹åº”çš„æ¶ˆæ¯å¤„ç†è€…å¤„ç†
 	 */
 	public void msgTransfer() throws ClassNotFoundException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
 		//String s = properties.getStringFromProperty(message.getInt("msgType") + "");

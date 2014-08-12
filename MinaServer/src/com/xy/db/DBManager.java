@@ -1,14 +1,14 @@
 package com.xy.db;
 
 /**
- * ÄÚ´æÊı¾İ¿â¹ÜÀíÕß
+ * å†…å­˜æ•°æ®åº“ç®¡ç†è€…
  */
 public class DBManager {
 	
 	public static void dbInit(){
-		/**½ÇÉ«ÏàÓ¦µÈ¼¶ÊôĞÔÄÚ´æÊı¾İ¿â³õÊ¼»¯*/
+		/**è§’è‰²ç›¸åº”ç­‰çº§å±æ€§å†…å­˜æ•°æ®åº“åˆå§‹åŒ–*/
 		RoleAttributeDB.roleAttrInit();
-		System.out.println("½ÇÉ«ÏàÓ¦µÈ¼¶ÊôĞÔÄÚ´æÊı¾İ¿â³õÊ¼»¯³É¹¦£¡");
+		System.out.println("è§’è‰²ç›¸åº”ç­‰çº§å±æ€§å†…å­˜æ•°æ®åº“åˆå§‹åŒ–æˆåŠŸï¼");
 		return;
 	}
 }

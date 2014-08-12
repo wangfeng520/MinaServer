@@ -13,14 +13,14 @@ public class Managers {
 
 	public static <T> T get(Class<T> type) {
 		Manager manager = map.get(type);
-		if (manager == null) log.warn("管理器不存在: {}", type.getCanonicalName());
+		if (manager == null) log.warn("绠＄悊鍣ㄤ笉瀛樺湪: {}", type.getCanonicalName());
 		return type.cast(manager);
 	}
 
 	public static void addManager(Manager manager) throws Exception {
 		Class<? extends Manager> type = manager.getClass();
 
-		log.info("注册Manager:" + type);
+		log.info("娉ㄥ唽Manager:" + type);
 		for (Class<?> c : type.getInterfaces()) {
 			if (!Manager.class.isAssignableFrom(c)) continue;
 			if (Manager.class.equals(c)) continue;

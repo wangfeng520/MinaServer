@@ -6,13 +6,13 @@ public class User extends IdBean {
 
 	private static final long serialVersionUID = 1L;
 	private long id;
-	private String name;  // Íæ¼ÒêÇ³Æ
-	private int level;	  // µ±Ç°µÈ¼¶
-	private int exp;	  // µ±Ç°¾­Ñé
- 	private int maxexp;   // µ±Ç°µÈ¼¶×î´ó¾­ÑéÖµ
-	private int gold;     // ½ğ±Ò
-	private int silver;	  // Òø±Ò
-	private int power;    // ÌåÁ¦
+	private String name;  // ç©å®¶æ˜µç§°
+	private int level;	  // å½“å‰ç­‰çº§
+	private int exp;	  // å½“å‰ç»éªŒ
+ 	private int maxexp;   // å½“å‰ç­‰çº§æœ€å¤§ç»éªŒå€¼
+	private int gold;     // é‡‘å¸
+	private int silver;	  // é“¶å¸
+	private int power;    // ä½“åŠ›
 	
 	public long getId() {
 		return id;

@@ -15,35 +15,35 @@ import com.xy.common.Tools;
 
 
 /**
- *JDBCÁ¬½Ó³Ø»úÖÆ£¬Ìá¹©»ñÈ¡Á¬½ÓºÍ·µ»ØÁ¬½ÓµÄ·½·¨
+ *JDBCè¿æ¥æ± æœºåˆ¶ï¼Œæä¾›è·å–è¿æ¥å’Œè¿”å›è¿æ¥çš„æ–¹æ³•
  */
 public class ConnectionPool {
 	
-	/**¿ÕÏĞÁ¬½Ó*/
+	/**ç©ºé—²è¿æ¥*/
 	private static LinkedList<Connection> m_notUsedConnection = new LinkedList<Connection>();
 	
-	/**ÒÑ¾­Ê¹ÓÃµÄÁ¬½Ó*/
+	/**å·²ç»ä½¿ç”¨çš„è¿æ¥*/
 	private static HashSet<Connection> m_usedConnection = new HashSet<Connection>();
 	
-	/**ÅäÖÃÎÄ¼şÊµÌå*/
+	/**é…ç½®æ–‡ä»¶å®ä½“*/
 	private static Tools utility;
 	
-	/**Êı¾İ¿âurl*/
+	/**æ•°æ®åº“url*/
 	private static String sql_url = null;
 	
-	/**Êı¾İ¿âÓÃ»§ÃûºÍÃÜÂëĞÅÏ¢*/
+	/**æ•°æ®åº“ç”¨æˆ·åå’Œå¯†ç ä¿¡æ¯*/
 	private static Properties connInfo;
 	
-	/**×î´óÁ¬½ÓÊı*/
+	/**æœ€å¤§è¿æ¥æ•°*/
 	private static int MAX_CONNECTION = 4;
 	
-	/**³ö´í±êÖ¾*/
+	/**å‡ºé”™æ ‡å¿—*/
 	static final boolean DEBUG = false;
 	
-	/**×îºóÇåÀíÁ¬½Ó³ØµÄÊ±¼ä*/
+	/**æœ€åæ¸…ç†è¿æ¥æ± çš„æ—¶é—´*/
 	static private long m_lastClearm_lastClearClosedConnection = System.currentTimeMillis();
 	
-	/**¼ì²éÁ¬½Ó¹Ø±ÕµÄÊ±¼ä¼ä¸ôÎª5Ãë*/
+	/**æ£€æŸ¥è¿æ¥å…³é—­çš„æ—¶é—´é—´éš”ä¸º5ç§’*/
 	public static long CHECK_CLOSED_CONNECTION_TIME = 5000;
 	
 	private static Logger log = Logger.getLogger(ConnectionPool.class);
@@ -63,7 +63,7 @@ public class ConnectionPool {
 	
 	
 	/**
-	 * ³õÊ¼»¯JDBCÇı¶¯
+	 * åˆå§‹åŒ–JDBCé©±åŠ¨
 	 */
 	private static void initDriver() throws InstantiationException,IllegalAccessException, ClassNotFoundException {
 		Driver driver = (Driver) Class.forName("org.postgresql.Driver").newInstance();
@@ -75,10 +75,10 @@ public class ConnectionPool {
 	}
 
 	/**
-	 * ³õÊ¼»¯JDBCµÄÅäÖÃĞÅÏ¢
+	 * åˆå§‹åŒ–JDBCçš„é…ç½®ä¿¡æ¯
 	 */
 	public static void JDBCInit(){
-		log.info("³õÊ¼»¯JDBCµÄÅäÖÃĞÅÏ¢");
+		log.info("åˆå§‹åŒ–JDBCçš„é…ç½®ä¿¡æ¯");
 		utility = new Tools();
 		connInfo = new Properties();
 		utility.getProperties("resource" + java.io.File.separator + "system.ini");
@@ -86,7 +86,7 @@ public class ConnectionPool {
 		connInfo.put("user", utility.getStringFromProperty("jdbc_user"));
 		connInfo.put("password", utility.getStringFromProperty("jdbc_pwd"));
 	
-		/**Á¬½Ó³Ø³õÊ¼Í¶ÈëÎå¸öÁ¬½Ó»º³å£¬¼Ó¿ìµÚÒ»´Î·şÎñ¶ËÏìÓ¦ËÙ¶È*/
+		/**è¿æ¥æ± åˆå§‹æŠ•å…¥äº”ä¸ªè¿æ¥ç¼“å†²ï¼ŒåŠ å¿«ç¬¬ä¸€æ¬¡æœåŠ¡ç«¯å“åº”é€Ÿåº¦*/
 		for(int i = 0; i < 10; i++){
 			try {
 				Connection conn = DriverManager.getConnection(sql_url,connInfo);
@@ -98,18 +98,18 @@ public class ConnectionPool {
 	}
 	
 	/**
-	 * ½¨Á¢Á¬½Ó
+	 * å»ºç«‹è¿æ¥
 	 */
 	public synchronized static Connection getConnection() {
-		log.info("½¨Á¢Á¬½Ó");
-		// ¹Ø±ÕÇå³ı¶àÓàµÄÁ¬½Ó
+		log.info("å»ºç«‹è¿æ¥");
+		// å…³é—­æ¸…é™¤å¤šä½™çš„è¿æ¥
 		clearClosedConnection();
 
-		// Êä³öµ±Ç°×ÜÁ¬½ÓÊı
+		// è¾“å‡ºå½“å‰æ€»è¿æ¥æ•°
 		if(DEBUG)
-			System.out.println("µ±Ç°×ÜÁ¬½ÓÊı£º" + getConnectionCount());
+			System.out.println("å½“å‰æ€»è¿æ¥æ•°ï¼š" + getConnectionCount());
 
-		// Ñ°ÕÒ¿ÕÏĞµÄÁ¬½Ó
+		// å¯»æ‰¾ç©ºé—²çš„è¿æ¥
 		while (m_notUsedConnection.size() > 0) {
 			try {
 				Connection con = (Connection) m_notUsedConnection.removeFirst();
@@ -120,14 +120,14 @@ public class ConnectionPool {
 
 				m_usedConnection.add(con);
 				if (DEBUG) {
-					// System.out.println("Á¬½Ó³õÊ¼»¯³É¹¦");
+					// System.out.println("è¿æ¥åˆå§‹åŒ–æˆåŠŸ");
 				}
 				return con;
 			} catch (SQLException e) {
 			}
 		}
 
-		// Ã»ÓĞÕÒµ½£¬½¨Á¢Ò»Ğ©ĞÂµÄÁ¬½ÓÒÔ¹©Ê¹ÓÃ
+		// æ²¡æœ‰æ‰¾åˆ°ï¼Œå»ºç«‹ä¸€äº›æ–°çš„è¿æ¥ä»¥ä¾›ä½¿ç”¨
 		int newCount = getIncreasingConnectionCount();
 		LinkedList<Connection> list = new LinkedList<Connection>();
 		Connection con = null;
@@ -139,11 +139,11 @@ public class ConnectionPool {
 			}
 		}
 
-		// Ã»ÓĞ³É¹¦½¨Á¢Á¬½Ó£¬·ÃÎÊÊ§°Ü
+		// æ²¡æœ‰æˆåŠŸå»ºç«‹è¿æ¥ï¼Œè®¿é—®å¤±è´¥
 		if (list.size() == 0)
 			return null;
 
-		// ³É¹¦½¨Á¢Á¬½Ó£¬Ê¹ÓÃµÄ¼ÓÈëused¶ÓÁĞ£¬Ê£ÏÂµÄ¼ÓÈënotUsed¶ÓÁĞ
+		// æˆåŠŸå»ºç«‹è¿æ¥ï¼Œä½¿ç”¨çš„åŠ å…¥usedé˜Ÿåˆ—ï¼Œå‰©ä¸‹çš„åŠ å…¥notUsedé˜Ÿåˆ—
 		con = (Connection) list.removeFirst();
 		m_usedConnection.add(con);
 		m_notUsedConnection.addAll(list);
@@ -153,7 +153,7 @@ public class ConnectionPool {
 	}
 
 	/**
-	 * ´´½¨ĞÂÁ¬½Ó
+	 * åˆ›å»ºæ–°è¿æ¥
 	 */
 	public static Connection getNewConnection() {
 		try {
@@ -166,7 +166,7 @@ public class ConnectionPool {
 	}
 
 	/**
-	 * ½«Ê¹ÓÃÍêµÄÁ¬½Ó·Å»Øµ½Á¬½Ó³ØÖĞ
+	 * å°†ä½¿ç”¨å®Œçš„è¿æ¥æ”¾å›åˆ°è¿æ¥æ± ä¸­
 	 */
 	static synchronized void pushConnectionBackToPool(Connection con) {
 		boolean exist = m_usedConnection.remove(con);
@@ -176,7 +176,7 @@ public class ConnectionPool {
 	}
 	
 	/**
-	 * ¹Ø±ÕËùÓĞÁ¬½Ó
+	 * å…³é—­æ‰€æœ‰è¿æ¥
 	 */
 	public static int close() {
 		int count = 0;
@@ -206,17 +206,17 @@ public class ConnectionPool {
 	}
 	
 	/**
-	 * Çå³ıÒÑ¾­¹Ø±ÕµÄÁ¬½Ó
+	 * æ¸…é™¤å·²ç»å…³é—­çš„è¿æ¥
 	 */
 	private static void clearClosedConnection(){
 		long time = System.currentTimeMillis();
 
-		/**Ê±¼ä³ö´í*/
+		/**æ—¶é—´å‡ºé”™*/
 		if(time < m_lastClearm_lastClearClosedConnection){
 			return;
 		}
 
-		/**Ê±¼ä²îÔÚ¼ä¸ôÊ±¼äÄÚ*/
+		/**æ—¶é—´å·®åœ¨é—´éš”æ—¶é—´å†…*/
 		if(time - m_lastClearm_lastClearClosedConnection < CHECK_CLOSED_CONNECTION_TIME){
 			return;
 		}
@@ -235,12 +235,12 @@ public class ConnectionPool {
 				iterator.remove();
 				//e.printStackTrace();
 				if(DEBUG){
-					System.out.println("Á¬½ÓÓĞÎÊÌâ£¬ÒÑ¶Ï¿ª");
+					System.out.println("è¿æ¥æœ‰é—®é¢˜ï¼Œå·²æ–­å¼€");
 				}
 			}
 		}
 
-		// Çå³ı¶àÓàµÄConnection
+		// æ¸…é™¤å¤šä½™çš„Connection
 		int decrease = getDecreasingConnectionCount();
 
 		while (decrease > 0 && m_notUsedConnection.size() > 0) {
@@ -257,7 +257,7 @@ public class ConnectionPool {
 	}
 
 	/**
-	 * ·µ»ØĞèÒªÔö¼ÓµÄÁ¬½ÓÊıÁ¿
+	 * è¿”å›éœ€è¦å¢åŠ çš„è¿æ¥æ•°é‡
 	 */
 	public static int getIncreasingConnectionCount() {
 		int count = 1;
@@ -270,7 +270,7 @@ public class ConnectionPool {
 	}
 
 	/**
-	 * ·µ»ØĞèÒªÇå³ıµÄÁ¬½ÓÊıÁ¿
+	 * è¿”å›éœ€è¦æ¸…é™¤çš„è¿æ¥æ•°é‡
 	 */
 	public static int getDecreasingConnectionCount() {
 		int count = 0;
@@ -283,21 +283,21 @@ public class ConnectionPool {
 	}
 
 	/**
-	 * ·µ»Ø»¹Ã»ÓĞÊ¹ÓÃµÄÁ¬½ÓÊıÁ¿£¬ÓÃÓÚ·ÖÅä
+	 * è¿”å›è¿˜æ²¡æœ‰ä½¿ç”¨çš„è¿æ¥æ•°é‡ï¼Œç”¨äºåˆ†é…
 	 */
 	public static synchronized int getNotUsedConnectionCount() {
 		return m_notUsedConnection.size();
 	}
 
 	/**
-	 * ·µ»ØÒÑ¾­Ê¹ÓÃµÄÁ¬½ÓÊıÁ¿
+	 * è¿”å›å·²ç»ä½¿ç”¨çš„è¿æ¥æ•°é‡
 	 */
 	public static synchronized int getUsedConnectionCount() {
 		return m_usedConnection.size();
 	}
 
 	/**
-	 * ·µ»ØÈ«²¿Á¬½ÓÊıÁ¿
+	 * è¿”å›å…¨éƒ¨è¿æ¥æ•°é‡
 	 */
 	public static synchronized int getConnectionCount() {
 		return m_notUsedConnection.size() + m_usedConnection.size();

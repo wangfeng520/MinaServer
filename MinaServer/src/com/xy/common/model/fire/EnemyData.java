@@ -1,13 +1,13 @@
 package com.xy.common.model.fire;
 
-/** ±»¹¥»÷µĞ·½ĞÅÏ¢*/
+/** è¢«æ”»å‡»æ•Œæ–¹ä¿¡æ¯*/
 public class EnemyData {
 	
-	private long enemyChaId; // ±»¹¥»÷Õß
-	private int actionId;   // ±»¹¥»÷·½Ê½
+	private long enemyChaId; // è¢«æ”»å‡»è€…
+	private int actionId;   // è¢«æ”»å‡»æ–¹å¼
 	private int currentHp;
 	private int totalHp;
-	private int changeHp; // ÑªÁ¿¸Ã±äÁ¿
+	private int changeHp; // è¡€é‡è¯¥å˜é‡
 		
 	public long getEnemyChaId() {
 		return enemyChaId;

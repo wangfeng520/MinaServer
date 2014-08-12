@@ -11,7 +11,7 @@ public interface CardDao {
 	public long addCard(Card card) throws Exception;
 
 	
-	// ============ ÒÔÏÂUserCard
+	// ============ ä»¥ä¸‹UserCard
 	public long addUserCard(UserCard userCard) throws Exception;
 	
 	public UserCard getUserCardById(long id) throws Exception;

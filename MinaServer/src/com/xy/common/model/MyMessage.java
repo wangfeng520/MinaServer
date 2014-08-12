@@ -2,14 +2,14 @@ package com.xy.common.model;
 
 import com.xy.common.struct.Bean;
 
-/** 对请求返回数据的封装
+/** 瀵硅姹傝繑鍥炴暟鎹殑灏佽
  * @param <T>*/
 public class MyMessage<T> extends Bean {
  
 	private static final long serialVersionUID = 1L;
-	private boolean ok;    // 是否请求成功
-	private int msgType;		   // 请求标记
-	private T data;	   // 返回数据
+	private boolean ok;    // 鏄惁璇锋眰鎴愬姛
+	private int msgType;		   // 璇锋眰鏍囪
+	private T data;	   // 杩斿洖鏁版嵁
 	
 
 	public boolean isOk() {

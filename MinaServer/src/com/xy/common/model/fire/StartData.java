@@ -1,18 +1,18 @@
 package com.xy.common.model.fire;
 
-/** ¿ªÊ¼µÄ¿¨ÅÆÎ»ÖÃµÈĞÅÏ¢*/
+/** å¼€å§‹çš„å¡ç‰Œä½ç½®ç­‰ä¿¡æ¯*/
 public class StartData {
-  	private int pos; // µĞÎÒË«·½Îä½«ËùÔÚ¾Å¹¬¸ñÎ»ÖÃ
-  	private int direction;  // ÕóÓª1ÏÂ2ÉÏ
-  	private int level;      // µÈ¼¶
-  	private  String icon;    // Í¼±ê
+  	private int pos; // æ•Œæˆ‘åŒæ–¹æ­¦å°†æ‰€åœ¨ä¹å®«æ ¼ä½ç½®
+  	private int direction;  // é˜µè¥1ä¸‹2ä¸Š
+  	private int level;      // ç­‰çº§
+  	private  String icon;    // å›¾æ ‡
    
-  	private String name;    // Ãû³Æ
-  	private  int totalHp;    // ×ÜÑªÁ¿
-  	private  int currentHp;  // µ±Ç°ÑªÁ¿
-  	private  long chaId;      // ½ÇÉ«Id
-  	private  long skillId;    // ¼¼ÄÜId
-  	private  int quality;     // Æ·ÖÊ
+  	private String name;    // åç§°
+  	private  int totalHp;    // æ€»è¡€é‡
+  	private  int currentHp;  // å½“å‰è¡€é‡
+  	private  long chaId;      // è§’è‰²Id
+  	private  long skillId;    // æŠ€èƒ½Id
+  	private  int quality;     // å“è´¨
   	
 	public int getPos() {
 		return pos;

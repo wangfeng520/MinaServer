@@ -6,9 +6,9 @@ public class CityCard extends IdBean {
 
 	private static final long serialVersionUID = 1L;
 	private long id;
-	private long cityId;    // ¹Ø¿¨Id
-	private long cardId;    // ¿¨ÅÆId
-	private int pos;    // ÕóĞÍÎ»ÖÃ
+	private long cityId;    // å…³å¡Id
+	private long cardId;    // å¡ç‰ŒId
+	private int pos;    // é˜µå‹ä½ç½®
 	
 	public long getId() {
 		return id;

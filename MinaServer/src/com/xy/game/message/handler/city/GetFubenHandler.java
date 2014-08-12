@@ -19,7 +19,7 @@ import com.xy.game.manager.Managers;
 import com.xy.game.message.handler.AbstractHandler;
 
 /**
- * ¸±±¾Ïà¹ØĞÅÏ¢´¦ÀíÆ÷
+ * å‰¯æœ¬ç›¸å…³ä¿¡æ¯å¤„ç†å™¨
  */
 public class GetFubenHandler extends AbstractHandler {
 
@@ -52,7 +52,7 @@ public class GetFubenHandler extends AbstractHandler {
 	}
 
 	/**
-	 * »ñÈ¡½ÇÉ«È«²¿ĞÅÏ¢
+	 * è·å–è§’è‰²å…¨éƒ¨ä¿¡æ¯
 	 */
 	public void getUserFuben() {
 
@@ -80,7 +80,7 @@ public class GetFubenHandler extends AbstractHandler {
 			String s = json.toString();
 			
 			
-			log.info("getUserFuben ·µ»ØÊı¾İ:" + s);
+			log.info("getUserFuben è¿”å›æ•°æ®:" + s);
 
 			session.write(s);
 
